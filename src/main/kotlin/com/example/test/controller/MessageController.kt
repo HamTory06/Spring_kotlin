@@ -2,6 +2,7 @@ package com.example.test.controller
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.persistence.Table
 
 @RestController
 class MessageController {
@@ -12,4 +13,6 @@ class MessageController {
         Message("3", "Privet!")
     )
 }
+
+@Table(name = "Message")
 data class Message(val id: String?, val text: String)

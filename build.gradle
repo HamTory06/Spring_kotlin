@@ -23,8 +23,14 @@ dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'javax.persistence:javax.persistence-api:2.2'
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'mysql:mysql-connector-java'
+	//lombok 라이브러리 추가 시작
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	//lombok 라이브러리 추가 끝
 }
 
 tasks.withType(KotlinCompile) {

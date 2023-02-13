@@ -1,28 +1,21 @@
 package com.example.test.controller
 
+import lombok.AllArgsConstructor
 import lombok.Data
-import org.apache.catalina.User
-import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.ModelAttribute
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RestController
-import javax.persistence.Entity
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class Controller{
-    @GetMapping("/message")
-    fun index(): List<UserForm> = listOf (
-        UserForm("홍길동","ghdrlfehd@gmail.com","123456789","010-1234-5678"),
-        UserForm("황주완","ghkdwndhks@gmail.com","123456789","010-1234-5678"),
-        UserForm("HamTory","HamTory@gmail.com","123456789","010-1234-56789")
+
+    @GetMapping("/api")
+    fun index(): Message{
+        return Message("황주완",1)
+    }
+
+    @Data
+    @AllArgsConstructor
+    data class Message(
+        var name: String,
+        var age: Int,
     )
 }
-@Data
-@Entity
-data class UserForm(
-    var name: String,
-    var gmail: String,
-    var password: String,
-    var phone: String
-)
